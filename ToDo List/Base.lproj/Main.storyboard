@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ues-W5-8XP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -134,14 +135,29 @@
                                                         <action selector="reminderSwitchChanged:" destination="xwu-jc-GPV" eventType="valueChanged" id="NKz-sU-8XG"/>
                                                     </connections>
                                                 </switch>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="t0K-od-LnB">
+                                                    <rect key="frame" x="216" y="0.0" width="182" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="182" id="9Zz-cc-gmx"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="xwu-jc-GPV" eventType="valueChanged" id="Loz-xF-AGh"/>
+                                                    </connections>
+                                                </datePicker>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/12/12, 12:12:12 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tig-nM-yp1">
-                                                    <rect key="frame" x="208" y="12" width="186" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="215" y="0.0" width="186" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="t0K-od-LnB" secondAttribute="trailing" constant="16" id="K3l-vZ-fA3"/>
+                                                <constraint firstAttribute="bottom" secondItem="t0K-od-LnB" secondAttribute="bottom" id="Sqd-fF-bfF"/>
+                                                <constraint firstItem="t0K-od-LnB" firstAttribute="top" secondItem="rYf-Eg-fSa" secondAttribute="top" id="g2x-6E-PVj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="ONh-EF-rme">
@@ -205,6 +221,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="compactDatePicker" destination="t0K-od-LnB" id="98n-Wq-35b"/>
                         <outlet property="dateLabel" destination="tig-nM-yp1" id="8YB-HC-3Zf"/>
                         <outlet property="datePicker" destination="Ohm-oQ-vKP" id="9IP-Wf-em0"/>
                         <outlet property="nameField" destination="fv7-42-8M4" id="Elr-Gc-rI6"/>
@@ -216,7 +233,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQo-H1-lv1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="8JQ-z3-hPa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2855.072463768116" y="107.8125"/>
+            <point key="canvasLocation" x="2853.6231884057975" y="107.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i4C-V2-wuR">
